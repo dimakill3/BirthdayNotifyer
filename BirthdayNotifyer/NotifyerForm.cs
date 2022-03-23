@@ -19,6 +19,7 @@ namespace BirthdayNotifyer
 
         internal static string ChangeDayText(int inputNum)
         {
+
             inputNum = Math.Abs(inputNum);
 
             inputNum %= 100;
