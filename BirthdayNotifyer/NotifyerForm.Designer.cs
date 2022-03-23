@@ -251,7 +251,6 @@ namespace BirthdayNotifyer
             this.Controls.Add(this.menu);
             this.MainMenuStrip = this.menu;
             this.MinimumSize = new System.Drawing.Size(569, 411);
-            this.Name = "NotifyerForm";
             this.Text = "Напоминатор";
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();

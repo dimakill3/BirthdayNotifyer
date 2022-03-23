@@ -16,5 +16,25 @@ namespace BirthdayNotifyer
         {
             InitializeComponent();
         }
+
+        internal static string ChangeDayText(int inputNum)
+        {
+            inputNum = Math.Abs(inputNum);
+
+            inputNum %= 100;
+
+            if (inputNum >= 5 && inputNum <= 20)
+                return "дней";
+
+            inputNum %= 10;
+
+            if (inputNum == 1)
+                return "день";
+
+            if (inputNum >= 2 && inputNum <= 4)
+                return "дня";
+
+            return "дней";
+        }
     }
 }

@@ -61,6 +61,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SomeInterfaceTests.cs" />
     <EmbeddedResource Include="NotifyerForm.resx">
       <DependentUpon>NotifyerForm.cs</DependentUpon>
     </EmbeddedResource>
