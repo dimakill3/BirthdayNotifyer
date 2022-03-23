@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BirthdayNotifyer
 {
-    public partial class Form1 : Form
+    public partial class NotifyerForm : Form
     {
-        public Form1()
+        public NotifyerForm()
         {
             InitializeComponent();
         }
