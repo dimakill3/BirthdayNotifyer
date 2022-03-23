@@ -38,21 +38,21 @@ namespace BirthdayNotifyer
             this.dayLabel = new System.Windows.Forms.Label();
             this.notifyDay = new System.Windows.Forms.NumericUpDown();
             this.MainTabPanel = new System.Windows.Forms.TabControl();
-            this.closeBirthdaysTabPage = new System.Windows.Forms.TabPage();
-            this.closeBirthdaysTable = new System.Windows.Forms.DataGridView();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BirthData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.allFriendsTabPage = new System.Windows.Forms.TabPage();
             this.allFriendsTable = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.closeBirthdaysTabPage = new System.Windows.Forms.TabPage();
+            this.closeBirthdaysTable = new System.Windows.Forms.DataGridView();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BirthData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.notifyDay)).BeginInit();
             this.MainTabPanel.SuspendLayout();
-            this.closeBirthdaysTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.closeBirthdaysTable)).BeginInit();
             this.allFriendsTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.allFriendsTable)).BeginInit();
+            this.closeBirthdaysTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.closeBirthdaysTable)).BeginInit();
             this.SuspendLayout();
             // 
             // todayDate
@@ -92,8 +92,8 @@ namespace BirthdayNotifyer
             // OpenFileMenuItem
             // 
             this.OpenFileMenuItem.Name = "OpenFileMenuItem";
-            this.OpenFileMenuItem.Size = new System.Drawing.Size(121, 22);
-            this.OpenFileMenuItem.Text = "Открыть";
+            this.OpenFileMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.OpenFileMenuItem.Text = "Сгенерироать";
             // 
             // label2
             // 
@@ -151,48 +151,6 @@ namespace BirthdayNotifyer
             this.MainTabPanel.Size = new System.Drawing.Size(553, 291);
             this.MainTabPanel.TabIndex = 9;
             // 
-            // closeBirthdaysTabPage
-            // 
-            this.closeBirthdaysTabPage.Controls.Add(this.closeBirthdaysTable);
-            this.closeBirthdaysTabPage.Location = new System.Drawing.Point(4, 24);
-            this.closeBirthdaysTabPage.Name = "closeBirthdaysTabPage";
-            this.closeBirthdaysTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.closeBirthdaysTabPage.Size = new System.Drawing.Size(545, 263);
-            this.closeBirthdaysTabPage.TabIndex = 0;
-            this.closeBirthdaysTabPage.Text = "Близжайшие дни рождения";
-            this.closeBirthdaysTabPage.UseVisualStyleBackColor = true;
-            // 
-            // closeBirthdaysTable
-            // 
-            this.closeBirthdaysTable.AllowUserToAddRows = false;
-            this.closeBirthdaysTable.AllowUserToDeleteRows = false;
-            this.closeBirthdaysTable.AllowUserToResizeRows = false;
-            this.closeBirthdaysTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Name,
-            this.BirthData});
-            this.closeBirthdaysTable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.closeBirthdaysTable.Location = new System.Drawing.Point(3, 3);
-            this.closeBirthdaysTable.MultiSelect = false;
-            this.closeBirthdaysTable.Name = "closeBirthdaysTable";
-            this.closeBirthdaysTable.RowHeadersVisible = false;
-            this.closeBirthdaysTable.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.closeBirthdaysTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.closeBirthdaysTable.Size = new System.Drawing.Size(539, 257);
-            this.closeBirthdaysTable.TabIndex = 0;
-            this.closeBirthdaysTable.TabStop = false;
-            // 
-            // Name
-            // 
-            this.Name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Name.HeaderText = "ФИО";
-            this.Name.Name = "Name";
-            // 
-            // BirthData
-            // 
-            this.BirthData.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.BirthData.HeaderText = "Дата рождения";
-            this.BirthData.Name = "BirthData";
-            // 
             // allFriendsTabPage
             // 
             this.allFriendsTabPage.Controls.Add(this.allFriendsTable);
@@ -237,6 +195,48 @@ namespace BirthdayNotifyer
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
+            // closeBirthdaysTabPage
+            // 
+            this.closeBirthdaysTabPage.Controls.Add(this.closeBirthdaysTable);
+            this.closeBirthdaysTabPage.Location = new System.Drawing.Point(4, 24);
+            this.closeBirthdaysTabPage.Name = "closeBirthdaysTabPage";
+            this.closeBirthdaysTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.closeBirthdaysTabPage.Size = new System.Drawing.Size(545, 263);
+            this.closeBirthdaysTabPage.TabIndex = 0;
+            this.closeBirthdaysTabPage.Text = "Близжайшие дни рождения";
+            this.closeBirthdaysTabPage.UseVisualStyleBackColor = true;
+            // 
+            // closeBirthdaysTable
+            // 
+            this.closeBirthdaysTable.AllowUserToAddRows = false;
+            this.closeBirthdaysTable.AllowUserToDeleteRows = false;
+            this.closeBirthdaysTable.AllowUserToResizeRows = false;
+            this.closeBirthdaysTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Name,
+            this.BirthData});
+            this.closeBirthdaysTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.closeBirthdaysTable.Location = new System.Drawing.Point(3, 3);
+            this.closeBirthdaysTable.MultiSelect = false;
+            this.closeBirthdaysTable.Name = "closeBirthdaysTable";
+            this.closeBirthdaysTable.RowHeadersVisible = false;
+            this.closeBirthdaysTable.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.closeBirthdaysTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.closeBirthdaysTable.Size = new System.Drawing.Size(539, 257);
+            this.closeBirthdaysTable.TabIndex = 0;
+            this.closeBirthdaysTable.TabStop = false;
+            // 
+            // Name
+            // 
+            this.Name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Name.HeaderText = "ФИО";
+            this.Name.Name = "Name";
+            // 
+            // BirthData
+            // 
+            this.BirthData.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.BirthData.HeaderText = "Дата рождения";
+            this.BirthData.Name = "BirthData";
+            // 
             // NotifyerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -251,15 +251,16 @@ namespace BirthdayNotifyer
             this.Controls.Add(this.menu);
             this.MainMenuStrip = this.menu;
             this.MinimumSize = new System.Drawing.Size(569, 411);
+            this.Name = "NotifyerForm";
             this.Text = "Напоминатор";
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.notifyDay)).EndInit();
             this.MainTabPanel.ResumeLayout(false);
-            this.closeBirthdaysTabPage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.closeBirthdaysTable)).EndInit();
             this.allFriendsTabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.allFriendsTable)).EndInit();
+            this.closeBirthdaysTabPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.closeBirthdaysTable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
