@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Friend.cs" />
+    <Compile Include="FriendTests.cs" />
     <Compile Include="Notebook.cs" />
     <Compile Include="NotebookTests.cs" />
     <Compile Include="NotifyerForm.cs">
