@@ -2,7 +2,7 @@
 
 namespace BirthdayNotifyer
 {
-    class Friend
+    public class Friend
     {
         private string name;
         private DateTime birthDate;

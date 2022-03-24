@@ -31,6 +31,20 @@ namespace BirthdayNotifyer
         }
 
         [Test]
+        public void AddSameFriendReturnFalse()
+        {
+            Notebook notebook = new Notebook();
+            string name = "друг 1";
+            DateTime dt = new DateTime(2000, 6, 13);
+            bool isAdded;
+
+            notebook.AddFriend(name, dt);
+            isAdded = notebook.AddFriend(name, dt);
+
+            Assert.AreEqual(false, isAdded);
+        }
+
+        [Test]
         public void FindFriendCorrect()
         {
             Notebook notebook = new Notebook();

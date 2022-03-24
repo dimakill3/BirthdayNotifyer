@@ -3,26 +3,39 @@ using System.Collections.Generic;
 
 namespace BirthdayNotifyer
 {
-    class Notebook
+    public class Notebook
     {
         private List<Friend> friends;
+        
+        public List<Friend> Friends
+        {
+            get 
+            { 
+                return friends;
+            }
+
+            private set { 
+                friends = value;
+            }
+        }
 
         public Notebook()
         {
             friends = new List<Friend>();
         }
 
-        internal object GetFriendsCount()
+        internal int GetFriendsCount()
         {
             return friends.Count;
         }
 
-        internal void AddFriend(string name, DateTime dateTime)
+        internal bool AddFriend(string name, DateTime dateTime)
         {
             if (FindFriend(name, dateTime))
-                return;
+                return false;
 
             friends.Add(new Friend(name, dateTime));
+            return true;
         }
 
         internal void DeleteLastFriend()

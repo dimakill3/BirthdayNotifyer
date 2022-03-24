@@ -40,12 +40,12 @@ namespace BirthdayNotifyer
             this.MainTabPanel = new System.Windows.Forms.TabControl();
             this.allFriendsTabPage = new System.Windows.Forms.TabPage();
             this.allFriendsTable = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.closeBirthdaysTabPage = new System.Windows.Forms.TabPage();
             this.closeBirthdaysTable = new System.Windows.Forms.DataGridView();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BirthData = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AllFriendsFriendName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AllFriendsBirthData = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.closeBirthdayFriendName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.closeBirthdayBirthday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.notifyDay)).BeginInit();
             this.MainTabPanel.SuspendLayout();
@@ -61,6 +61,7 @@ namespace BirthdayNotifyer
             this.todayDate.Name = "todayDate";
             this.todayDate.Size = new System.Drawing.Size(200, 20);
             this.todayDate.TabIndex = 0;
+            this.todayDate.ValueChanged += new System.EventHandler(this.todayDate_ValueChanged);
             // 
             // label1
             // 
@@ -92,8 +93,9 @@ namespace BirthdayNotifyer
             // OpenFileMenuItem
             // 
             this.OpenFileMenuItem.Name = "OpenFileMenuItem";
-            this.OpenFileMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.OpenFileMenuItem.Size = new System.Drawing.Size(151, 22);
             this.OpenFileMenuItem.Text = "Сгенерироать";
+            this.OpenFileMenuItem.Click += new System.EventHandler(this.OpenFileMenuItem_Click);
             // 
             // label2
             // 
@@ -138,6 +140,7 @@ namespace BirthdayNotifyer
             0,
             0,
             0});
+            this.notifyDay.ValueChanged += new System.EventHandler(this.notifyDay_ValueChanged);
             // 
             // MainTabPanel
             // 
@@ -168,8 +171,8 @@ namespace BirthdayNotifyer
             this.allFriendsTable.AllowUserToDeleteRows = false;
             this.allFriendsTable.AllowUserToResizeRows = false;
             this.allFriendsTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2});
+            this.closeBirthdayFriendName,
+            this.closeBirthdayBirthday});
             this.allFriendsTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.allFriendsTable.Location = new System.Drawing.Point(3, 3);
             this.allFriendsTable.MultiSelect = false;
@@ -180,20 +183,6 @@ namespace BirthdayNotifyer
             this.allFriendsTable.Size = new System.Drawing.Size(539, 257);
             this.allFriendsTable.TabIndex = 0;
             this.allFriendsTable.TabStop = false;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.HeaderText = "ФИО";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Дата рождения";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // closeBirthdaysTabPage
             // 
@@ -212,8 +201,8 @@ namespace BirthdayNotifyer
             this.closeBirthdaysTable.AllowUserToDeleteRows = false;
             this.closeBirthdaysTable.AllowUserToResizeRows = false;
             this.closeBirthdaysTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Name,
-            this.BirthData});
+            this.AllFriendsFriendName,
+            this.AllFriendsBirthData});
             this.closeBirthdaysTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.closeBirthdaysTable.Location = new System.Drawing.Point(3, 3);
             this.closeBirthdaysTable.MultiSelect = false;
@@ -225,17 +214,31 @@ namespace BirthdayNotifyer
             this.closeBirthdaysTable.TabIndex = 0;
             this.closeBirthdaysTable.TabStop = false;
             // 
-            // Name
+            // AllFriendsFriendName
             // 
-            this.Name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Name.HeaderText = "ФИО";
-            this.Name.Name = "Name";
+            this.AllFriendsFriendName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.AllFriendsFriendName.HeaderText = "ФИО";
+            this.AllFriendsFriendName.Name = "AllFriendsFriendName";
             // 
-            // BirthData
+            // AllFriendsBirthData
             // 
-            this.BirthData.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.BirthData.HeaderText = "Дата рождения";
-            this.BirthData.Name = "BirthData";
+            this.AllFriendsBirthData.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.AllFriendsBirthData.HeaderText = "Дата рождения";
+            this.AllFriendsBirthData.Name = "AllFriendsBirthData";
+            // 
+            // closeBirthdayFriendName
+            // 
+            this.closeBirthdayFriendName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.closeBirthdayFriendName.HeaderText = "ФИО";
+            this.closeBirthdayFriendName.Name = "closeBirthdayFriendName";
+            this.closeBirthdayFriendName.ReadOnly = true;
+            // 
+            // closeBirthdayBirthday
+            // 
+            this.closeBirthdayBirthday.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.closeBirthdayBirthday.HeaderText = "Дата рождения";
+            this.closeBirthdayBirthday.Name = "closeBirthdayBirthday";
+            this.closeBirthdayBirthday.ReadOnly = true;
             // 
             // NotifyerForm
             // 
@@ -279,12 +282,12 @@ namespace BirthdayNotifyer
         private System.Windows.Forms.TabControl MainTabPanel;
         private System.Windows.Forms.TabPage closeBirthdaysTabPage;
         private System.Windows.Forms.DataGridView closeBirthdaysTable;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BirthData;
         private System.Windows.Forms.TabPage allFriendsTabPage;
         private System.Windows.Forms.DataGridView allFriendsTable;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn closeBirthdayFriendName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn closeBirthdayBirthday;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AllFriendsFriendName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AllFriendsBirthData;
     }
 }
 

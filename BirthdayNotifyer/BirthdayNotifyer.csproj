@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="Logic\DataForGenerateFriends.cs" />
     <Compile Include="Logic\Friend.cs" />
+    <Compile Include="Tests\FormLogicTests.cs" />
     <Compile Include="Tests\FriendTests.cs" />
     <Compile Include="Logic\Notebook.cs" />
     <Compile Include="Tests\NotebookTests.cs" />

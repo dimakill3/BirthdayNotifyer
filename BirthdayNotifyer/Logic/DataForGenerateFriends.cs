@@ -24,7 +24,7 @@ namespace BirthdayNotifyer
         };
 
         /// <summary>
-        /// Генерирует случайное ФИО по заданным в программе именам
+        /// Генерирует случайное ФИО по заданным в программе именам, фамилиям, отчествам
         /// </summary>
         /// <returns></returns>
         public string GetRandomName()
@@ -40,15 +40,17 @@ namespace BirthdayNotifyer
         }
 
         /// <summary>
-        /// Генерирует случайную дату рождения относительно 01.01.2000 в заданном диапазоне
+        /// Генерирует случайную дату рождения для совершеннолетнего в указанном диапазоне.
         /// </summary>
         /// <param name="range">Диапазон отклонение даты</param>
         /// <returns>Возвращает строковое значение даты в формате дд.ммм.гггг</returns>
-        public string GetRandomBirthdate(int range)
+        public DateTime GetRandomBirthdate(int range)
         {
             Random random = new Random();
 
-            return new DateTime(2000, 1, 1).AddDays(random.Next(-range, range + 1)).ToString("dd,MMM,yyyy");
+            int daysForFirst18 = 18 * 365;
+
+            return DateTime.Now.AddDays(-daysForFirst18).AddDays(-random.Next(range));
         }
     }
 }
