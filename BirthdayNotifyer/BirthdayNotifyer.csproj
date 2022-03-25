@@ -53,7 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Logic\DataForGenerateFriends.cs" />
+    <Compile Include="Logic\FriendsGenerator.cs" />
     <Compile Include="Logic\Friend.cs" />
     <Compile Include="Tests\FormLogicTests.cs" />
     <Compile Include="Tests\FriendTests.cs" />
